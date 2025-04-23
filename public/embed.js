@@ -41,16 +41,19 @@
       });
     }
 
-    // Load all scripts in sequence
-    Promise.all([
-      loadScript('https://unpkg.com/react@18/umd/react.production.min.js'),
-      loadScript('https://unpkg.com/react-dom@18/umd/react-dom.production.min.js')
-    ]).then(() => {
-      return loadScript(base + 'embed.iife.js');
-    }).then(() => {
-      window.embedMetisWidget(container);
-    }).catch(error => {
-      console.error('Error loading scripts:', error);
-    });
+    // Load scripts sequentially
+    loadScript('https://unpkg.com/react@18/umd/react.production.min.js')
+      .then(() => loadScript('https://unpkg.com/react-dom@18/umd/react-dom.production.min.js'))
+      .then(() => loadScript(base + 'embed.iife.js'))
+      .then(() => {
+        if (window.embedMetisWidget) {
+          window.embedMetisWidget(container);
+        } else {
+          console.error('Widget embedding function not found');
+        }
+      })
+      .catch(error => {
+        console.error('Error loading scripts:', error);
+      });
   };
 })();
