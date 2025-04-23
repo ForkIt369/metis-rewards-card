@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Metis color palette */
+  --metis-blue-primary: #00C2FF;
+  --metis-blue-secondary: #0066FF;
+  --metis-blue-light: #38B6FF;
+  --metis-blue-glow: rgba(0, 194, 255, 0.5);
+  --metis-dark: #121212;
+  --metis-darker: #0A0A0A;
+  --metis-gray-dark: #2A2A2A;
+  --metis-gray-medium: #4A4A4A;
+  --metis-gray-light: #7A7A7A;
+  --metis-gray-lighter: #222222;
+  --metis-white: #FFFFFF;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Border radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--metis-darker);
+  color: var(--metis-white);
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}

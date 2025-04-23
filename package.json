@@ -1,0 +1,19 @@
+{
+  "name": "metis-rewards-widget",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:widget && npm run build:embed",
+    "build:widget": "tsc && vite build",
+    "build:embed": "node scripts/prepare-embed.js",
+    "start": "vite",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.3.9"
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metis Rewards Widget Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #121212;
+      color: white;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .widget-container {
+      width: 500px;
+      height: 500px;
+      margin: 2rem auto;
+    }
+
+    @media (max-width: 520px) {
+      .widget-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Metis Rewards Distribution Status</h1>
+    <p>Current status of the rewards distribution wallet. Click the card to see details.</p>
+    
+    <!-- Widget will be embedded here -->
+    <div id="metis-widget" class="widget-container"></div>
+  </div>
+
+  <!-- Embed the widget -->
+  <script>
+    // Set base path based on environment
+    window.METIS_WIDGET_BASE = window.location.hostname === 'localhost' ? '' : '/';
+  </script>
+  <script src="/embed.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      window.initMetisWidget('metis-widget');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+.zen-card {
+  perspective: 1000px;
+  width: 500px;
+  height: 500px;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+}
+
+.zen-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  box-shadow: 0 0 20px var(--metis-blue-glow);
+  border-radius: var(--border-radius-lg);
+  background: linear-gradient(135deg, var(--metis-dark), var(--metis-darker));
+}
+
+.zen-card .zen-card-inner.zen-is-flipped {
+  transform: rotateY(180deg);
+}
+
+.zen-card-front,
+.zen-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  background: linear-gradient(135deg, var(--metis-dark), var(--metis-darker));
+  border: 1px solid var(--metis-blue-primary);
+}
+
+.zen-card-back {
+  transform: rotateY(180deg);
+}
+
+.zen-avatar {
+  width: 120px;
+  height: 120px;
+  margin-bottom: var(--spacing-md);
+  filter: drop-shadow(0 0 10px var(--metis-blue-glow));
+}
+
+.zen-question {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--metis-white);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+  text-shadow: 0 0 10px var(--metis-blue-glow);
+}
+
+.zen-wallet-info {
+  font-size: 0.875rem;
+  color: var(--metis-gray-light);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.zen-wallet-address {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: var(--metis-blue-light);
+  margin-bottom: var(--spacing-lg);
+  word-break: break-all;
+  text-align: center;
+  max-width: 90%;
+  opacity: 0.8;
+}
+
+.zen-balance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.zen-balance-label {
+  font-size: 1rem;
+  color: var(--metis-gray-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.zen-balance-amount {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--metis-blue-primary);
+  text-shadow: 0 0 10px var(--metis-blue-glow);
+}
+
+.zen-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--metis-gray-dark);
+  border-radius: var(--border-radius-sm);
+  margin: var(--spacing-md) 0;
+  overflow: visible;
+  position: relative;
+}
+
+.zen-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(90deg, 
+    var(--metis-blue-primary), 
+    var(--metis-blue-secondary)
+  );
+  border-radius: calc(var(--border-radius-sm) + 2px);
+  z-index: -1;
+  opacity: 0.2;
+  filter: blur(4px);
+}
+
+.zen-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    var(--metis-blue-primary), 
+    var(--metis-blue-secondary)
+  );
+  border-radius: var(--border-radius-sm);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.zen-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: inherit;
+  border-radius: calc(var(--border-radius-sm) + 4px);
+  filter: blur(8px);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.zen-status {
+  font-size: 1rem;
+  color: var(--metis-gray-light);
+  margin-top: var(--spacing-md);
+}
+
+.zen-status-complete {
+  color: var(--metis-blue-light);
+  font-weight: 600;
+  text-shadow: 0 0 10px var(--metis-blue-glow);
+}
+
+.zen-flip-icon {
+  margin-top: var(--spacing-lg);
+  opacity: 0.5;
+  transition: var(--transition-fast);
+  color: var(--metis-blue-primary);
+}
+
+.zen-card:hover .zen-flip-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.zen-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.zen-loading-indicator {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--metis-gray-dark);
+  border-top: 2px solid var(--metis-blue-primary);
+  border-radius: 50%;
+  animation: zen-spin 1.5s linear infinite;
+  box-shadow: 0 0 10px var(--metis-blue-glow);
+}
+
+@keyframes zen-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hover Effects */
+.zen-card:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.zen-card:hover .zen-card-inner {
+  box-shadow: 0 0 30px var(--metis-blue-glow);
+}
+
+.zen-card:active {
+  transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 520px) {
+  .zen-card {
+    width: 100vw;
+    height: 100vw;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .zen-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .zen-question {
+    font-size: 1.25rem;
+  }
+
+  .zen-wallet-address {
+    font-size: 0.75rem;
+  }
+
+  .zen-balance {
+    font-size: 1rem;
+  }
+}
