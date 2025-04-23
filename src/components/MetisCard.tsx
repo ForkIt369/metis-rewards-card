@@ -45,7 +45,6 @@ const MetisCard: React.FC<CardProps> = ({ address = DISTRIBUTION_WALLET, thresho
         <div className="zen-card-front">
           <img src={getAvatarSrc()} alt="Robit Avatar" className="zen-avatar" />
           <h2 className="zen-question">Are the rewards ready yet?</h2>
-          <p className="zen-wallet-address">{address}</p>
           <div className="zen-flip-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 5V19M12 19L18 13M12 19L6 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
