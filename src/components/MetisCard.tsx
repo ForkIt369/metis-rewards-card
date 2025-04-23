@@ -60,7 +60,6 @@ const MetisCard: React.FC<CardProps> = ({ address = DISTRIBUTION_WALLET, thresho
             <>
               <img src={getAvatarSrc()} alt="Robit Avatar" className="zen-avatar" />
               <p className="zen-balance">
-                <span className="zen-balance-label">Current:</span>
                 <span className="zen-balance-amount">{balance} METIS</span>
               </p>
               <div className="zen-progress-bar" role="progressbar" aria-valuenow={percentComplete} aria-valuemin={0} aria-valuemax={100}>
