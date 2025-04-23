@@ -63,6 +63,7 @@ const MetisCard: React.FC<CardProps> = ({ address = DISTRIBUTION_WALLET, thresho
               <p className="zen-balance">
                 <span className="zen-balance-amount">{balance} METIS</span>
               </p>
+              <p className="zen-wallet-address">Distribution Wallet:<br/>{address}</p>
               <div className="zen-progress-bar" role="progressbar" aria-valuenow={percentComplete} aria-valuemin={0} aria-valuemax={100}>
                 <div 
                   className="zen-progress-fill"
