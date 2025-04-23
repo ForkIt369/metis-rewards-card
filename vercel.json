@@ -1,20 +1,5 @@
 {
-  "version": 2,
-  "public": true,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "npm run build",
-        "outputDirectory": "dist",
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.+)", "dest": "/$1" },
-    { "src": "/(.*)", "dest": "/example-embed.html" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/example-embed.html" }
   ]
 }
