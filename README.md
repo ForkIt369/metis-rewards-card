@@ -84,6 +84,23 @@ This will create:
 - `dist/embed.js` - Widget loader script
 - `dist/example-embed.html` - Example implementation
 
+## Deployment
+
+### Manual Deployment to Vercel
+
+1. Fork this repository to your GitHub account
+2. Go to [Vercel Dashboard](https://vercel.com/dashboard)
+3. Click "New Project"
+4. Import your forked repository
+5. Configure the project:
+   - Framework Preset: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Install Command: `npm install`
+6. Click "Deploy"
+
+The widget will be available at your Vercel deployment URL.
+
 ## License
 
 MIT
