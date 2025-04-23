@@ -5,27 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Metis Rewards Widget</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background-color: #121212;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      overflow: hidden;
     }
 
     #metis-widget {
-      width: 500px;
-      height: 500px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    @media (max-width: 520px) {
-      #metis-widget {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1;
-      }
+    .zen-card {
+      width: 100%;
+      height: 100%;
+      max-width: 500px;
+      max-height: 500px;
     }
   </style>
 </head>
