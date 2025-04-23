@@ -5,9 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:widget && npm run build:embed",
-    "build:widget": "tsc && vite build",
-    "build:embed": "node scripts/prepare-embed.js",
+    "build": "tsc && vite build && cp public/example-embed.html dist/ && cp public/embed.js dist/",
     "start": "vite",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
